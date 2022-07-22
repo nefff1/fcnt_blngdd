@@ -1973,9 +1973,9 @@ p <- l.raoplot$d.plotting %>%
                aes(x = varlevel, y = Estimate, col = level,
                    yend = Estimate + 1.96 * se, xend = varlevel,
                    size = sign)) +
-  geom_point(aes(x = varlevel, y = Estimate), # white background for points
+  geom_point(aes(x = varlevel, y = Estimate, shape = level), # white background for points
              col = "white", size = 2.75) +
-  geom_point(aes(x = varlevel, y = Estimate, col = level), # actual points
+  geom_point(aes(x = varlevel, y = Estimate, col = level, shape = level), # actual points
              size = 2) +
   geom_line(data = . %>% filter(!is.na(Tree_sp)), # connect points of same species
             aes(x = varlevel, y = Estimate, group = Tree_sp),
@@ -1988,6 +1988,9 @@ p <- l.raoplot$d.plotting %>%
                       breaks = c("Site", "Patch", "Object"), 
                       labels = c("Site", "Patch", "Object"),
                       name = "Filtering step") +
+  scale_shape_manual(values = c(Site = 19, Patch = 15, Object = 17), 
+                     labels = c("Site", "Patch", "Object"),
+                     name = "Filtering step") +
   scale_size_manual(values = c(sign = 1.5, ns = .5), guide = F) +
   scale_x_discrete(labels = xlabels, drop = F) +
   scale_alpha_continuous(range = c(.1, .8), guide = F) +
@@ -2118,9 +2121,9 @@ d.plotting %>%
                aes(x = varlevel, y = Estimate, col = level,
                    yend = Estimate + 1.96 * se, xend = varlevel,
                    size = sign)) +
-  geom_point(aes(x = varlevel, y = Estimate), # white background of points
+  geom_point(aes(x = varlevel, y = Estimate, shape = level), # white background of points
              col = "white", size = 2.75) +
-  geom_point(aes(x = varlevel, y = Estimate, col = level), # actual points
+  geom_point(aes(x = varlevel, y = Estimate, col = level, shape = level), # actual points
              size = 2) +
   geom_line(data = . %>% filter(!is.na(Tree_sp)), # connect two points per tree species
             aes(x = varlevel, y = Estimate, group = Tree_sp),
@@ -2135,6 +2138,11 @@ d.plotting %>%
                                  "Patch                                   ",  # space to being able to place the icons
                                  "Object                                 "), # space to being able to place the icons
                       name = "Filtering step") +
+  scale_shape_manual(values = c(Site = 19, Patch = 15, Object = 17), 
+                     labels = c("Site                                   ", # space to being able to place the icons
+                                "Patch                                   ",  # space to being able to place the icons
+                                "Object                                 "), # space to being able to place the icons
+                     name = "Filtering step") +
   scale_size_manual(values = c(sign = 1.5, ns = .5), guide = F) + # significant lines bold
   scale_x_discrete(labels = xlabels, drop = F) +
   scale_alpha_continuous(range = c(.1, .8), guide = F) +
@@ -2495,9 +2503,9 @@ f_levelplot_detail <- function(trait_i){
     geom_segment(aes(x = varlevel, y = Estimate, col = level,
                      yend = Estimate + 1.96 * se, xend = varlevel,
                      size = sign)) +
-    geom_point(aes(x = varlevel, y = Estimate),
+    geom_point(aes(x = varlevel, y = Estimate, shape = level),
                col = "white", size = 2.75) +
-    geom_point(aes(x = varlevel, y = Estimate, col = level),
+    geom_point(aes(x = varlevel, y = Estimate, col = level, shape = level),
                size = 2) +
     geom_vline(xintercept = seq(.5, 8.5, 1), lty = 3, size = .25) +
     geom_vline(xintercept = seq(12.5, 50.5, 2), lty = 3, size = .25) +
@@ -2509,6 +2517,9 @@ f_levelplot_detail <- function(trait_i){
                         breaks = c("Site", "Patch", "Object"), 
                         labels = c("Region-to-site", "Site-to-patch", "Patch-to-object"),
                         name = "Filtering step") +
+    scale_shape_manual(values = c(Site = 19, Patch = 15, Object = 17), 
+                       labels = c("Region-to-site", "Site-to-patch", "Patch-to-object"),
+                       name = "Filtering step") +
     scale_size_manual(values = c(sign = 1.5, ns = .5), guide = F) +
     scale_x_discrete(labels = xlabels, drop = F) +
     scale_alpha_continuous(range = c(.1, .8), guide = F) +
