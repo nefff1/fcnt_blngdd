@@ -37,11 +37,11 @@ vars.patch <- c("DWV", "ssc_mean", "Cover_above2m")
 ################################################################################.
 
 # beetle data from deadwood eclectors ------------------------------------------.
-d.abund.stem <- read.csv("Data/BEXIS/31123_16_Dataset/31123_16_data.csv")
+d.abund.stem <- read.csv("Data/BEXIS/31123_19_Dataset/31123_19_data.csv", sep = ";")
 
 d.abund.stem <- d.abund.stem %>% 
   mutate(PlotID = substr(TrapID, 1, 5)) %>% # to adjust new data set
-  rename(ToplaAdults = Adults) %>% # to adjust new data set
+  rename(ToplaAdults = NumberAdults) %>% # to adjust new data set
   mutate(PlotID = as.character(PlotID),
          SpeciesID = as.character(SpeciesID)) %>% 
   filter(ToplaAdults > 0)
@@ -54,10 +54,8 @@ d.abund.stem <- d.abund.stem %>%
 # edit data
 d.abund.stem <- d.abund.stem %>% 
   filter(TreeID != "DGL080") %>%
-  # correct two mistakes and one taxonomic inconsistency
-  mutate(PlotID = ifelse(TreeID == "FI061", "SEW08", PlotID),
-         PlotID = ifelse(TreeID == "DGL012", "HEW08", PlotID),
-         SpeciesID = ifelse(SpeciesID == "Phloeopora bernhaueri", 
+  # taxonomic inconsistency
+  mutate(SpeciesID = ifelse(SpeciesID == "Phloeopora bernhaueri", 
                             "Phloeopora corticalis", SpeciesID))
 
 
