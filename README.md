@@ -2,7 +2,7 @@ This repository contains code and data that was used in the analyses for the fol
 
 Felix Neff, Jonas Hagge, Rafael Achury, Didem Ambarlı, Christian Ammer, Peter Schall, Sebastian Seibold, Michael Staab, Wolfgang W. Weisser, Martin M. Gossner. **Hierarchical trait filtering at different spatial scales determines beetle assemblages in deadwood**.
 
-All relevant analyses are contained in the file **R_full_code.R**. Data stored in the *Data* folder:
+All relevant analyses are contained in the file **R_full_code.R**. Data stored in the *Data* folder (also available from the Zenodo repository, https://doi.org/10.5281/zenodo.7092201):
 
 -   **BELongDead_Subplots_Normal.csv**: List of *normal* subplots within the BELongDead projects (only these were included in the analyses)
 -   **Body_length.csv**: Body length data for study species assembled from Freude et al. (1965-1998)
