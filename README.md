@@ -1,6 +1,6 @@
 This repository contains code and data that was used in the analyses for the following manuscript:
 
-Felix Neff, Jonas Hagge, Rafael Achury, Didem Ambarlı, Christian Ammer, Peter Schall, Sebastian Seibold, Michael Staab, Wolfgang W. Weisser, Martin M. Gossner. **Hierarchical trait filtering at different spatial scales determines beetle communities in deadwood**.
+Felix Neff, Jonas Hagge, Rafael Achury, Didem Ambarlı, Christian Ammer, Peter Schall, Sebastian Seibold, Michael Staab, Wolfgang W. Weisser, Martin M. Gossner. **Hierarchical trait filtering at different spatial scales determines beetle assemblages in deadwood**.
 
 All relevant analyses are contained in the file **R_full_code.R**. Data stored in the *Data* folder:
 
