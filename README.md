@@ -1,6 +1,6 @@
-This repository contains code and data that was used in the analyses for the following manuscript:
+This repository contains code and data that was used in the analyses for the following publication:
 
-Felix Neff, Jonas Hagge, Rafael Achury, Didem Ambarlı, Christian Ammer, Peter Schall, Sebastian Seibold, Michael Staab, Wolfgang W. Weisser, Martin M. Gossner. **Hierarchical trait filtering at different spatial scales determines beetle assemblages in deadwood**.
+Felix Neff, Jonas Hagge, Rafael Achury, Didem Ambarlı, Christian Ammer, Peter Schall, Sebastian Seibold, Michael Staab, Wolfgang W. Weisser, Martin M. Gossner (2022). **Hierarchical trait filtering at different spatial scales determines beetle assemblages in deadwood**. *Functional Ecology*. <https://doi.org/10.1111/1365-2435.14186>
 
 All relevant analyses are contained in the file **R_full_code.R**. Data stored in the *Data* folder (also available from the Zenodo repository, https://doi.org/10.5281/zenodo.7092201):
 
